@@ -6,15 +6,16 @@
 
 <PageContainer title="FAQ">
   <UiSection id="slow">
-    <slot slot="heading">Why is converting files so slow?</slot>
+    <slot slot="heading">Why is transcribing so slow?</slot>
     <p>
       Speech recognition is a very resource intensive task. Due to the
       limitations of WASM, the process is about 10x slower compared to a native
       application (with GPU support). The encoding speed also depends on the
-      model file and length of the input file.
+      model file and the length of the input file.
     </p>
     <p>
-      Consider to use a native application or a cloud service for large files.
+      Consider to use a native application or a cloud service for better
+      performance and results.
     </p>
   </UiSection>
 
@@ -29,9 +30,9 @@
   </UiSection>
 
   <UiSection id="model-support">
-    <slot slot="heading">Why is there no support for larger models?</slot>
+    <slot slot="heading">Why is there no support for large models?</slot>
     <p>
-      The application is limited by the browsers memory. Loading a larger model
+      The application is limited by the browsers memory. Loading a large model
       file would propably exceed the memory limit of the browser. Also the
       performance would be near unusable due to the slow processing speed.
     </p>
@@ -54,12 +55,12 @@
       capability?
     </slot>
     <p>
-      To work offline, your browser needs to support Service Worker. The latest
+      To work offline, your browser needs to support service worker. The latest
       versions of Chrome, Firefox and Safari should work. So check if you have
       the latest version installed.
     </p>
     <p>
-      Please also check if you have <b>enabled cookies</b> in your browser settings.
+      Please also check if you have <b>cookies enabled</b> in your browser settings.
       If cookies are disabled completly the browser doesn't allow to store any data
       locally. This includes caching the data in a service worker for offline capability.
     </p>
@@ -67,18 +68,18 @@
 
   <UiSection id="cache">
     <slot slot="heading">
-      Why does application data gets preloaded everytime, aka why does my
-      application data not cache?
+      Why does the application data gets preloaded everytime, aka why does the
+      application data not persist?
     </slot>
     <p>
       The application data is stored in the browsers cache storage. If you have
-      set your browser to delete all data (cookies and website data) on close,
+      set your browser to delete all data (cookies and website data) on close
       the application data will be deleted.
     </p>
   </UiSection>
 
   <UiSection id="ffmpeg-error">
-    <slot slot="heading">I get an error while converting a file.</slot>
+    <slot slot="heading">I get an error while transcribing a file.</slot>
     <p>
       Your browser needs to support <b>Shared Array Buffer</b>. Chrome 68+,
       Firefox 79+, Safari 15.2+ and Edge 79+ should work. You can get more
@@ -93,7 +94,7 @@
   </UiSection>
 
   <UiSection id="size-limit">
-    <slot slot="heading">Why can I only convert files up to 2GB?</slot>
+    <slot slot="heading">Why can I only transcribe files up to 2GB?</slot>
     <p>
       This is a hard limit of the browser when using service workers. This may
       change in the future.
@@ -103,9 +104,9 @@
   <UiSection id="who">
     <slot slot="heading">Who are you and why have you created this?</slot>
     <p>
-      I'm a freelance webdevolper with a passion for web apps. I've created this
-      as a side project to learn more about progressive web apps. Check out my
-      site at <a href="https://thomashurtig.de" target="_blank"
+      I'm a freelance web devolper with a passion for web apps. I've created
+      this as a side project to learn more about progressive web apps. Check out
+      my site at <a href="https://thomashurtig.de" target="_blank"
         >thomashurtig.de</a
       >.
     </p>
