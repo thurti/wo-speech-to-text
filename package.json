@@ -1,0 +1,52 @@
+{
+  "name": "speech-to-text",
+  "private": true,
+  "version": "0.1.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest --watch",
+    "e2e-cli": "npx playwright test",
+    "e2e": "npx playwright test --ui",
+    "build": "npm run copy-transcribe && vite build",
+    "build-preview": "npm run copy-transcribe && vite build --mode preview && npm run preview",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.check.json",
+    "copy-transcribe": "mkdir -p ./public/lib/transcribe && cp ./node_modules/@transcribe/shout/src/shout/* ./public/lib/transcribe",
+    "deploy": "sh deploy.sh > deploy.log 2>&1"
+  },
+  "devDependencies": {
+    "@playpilot/svelte-htm": "^1.0.1",
+    "@playwright/test": "^1.44.1",
+    "@sveltejs/vite-plugin-svelte": "^3.1.0",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.13",
+    "@testing-library/dom": "^9.3.4",
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/svelte": "^4.2.3",
+    "@testing-library/user-event": "^14.5.2",
+    "@tsconfig/svelte": "^5.0.4",
+    "@types/lodash": "^4.17.4",
+    "@types/node": "^20.12.12",
+    "autoprefixer": "^10.4.19",
+    "htm": "^3.1.1",
+    "jsdom": "^24.0.0",
+    "lodash": "^4.17.21",
+    "postcss": "^8.4.38",
+    "prettier": "^3.2.5",
+    "prettier-plugin-svelte": "^3.2.3",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "sass": "^1.77.2",
+    "svelte": "^4.2.17",
+    "svelte-check": "^3.7.1",
+    "svelte-spa-router": "^4.0.1",
+    "tailwindcss": "^3.4.3",
+    "tslib": "^2.6.2",
+    "vite": "5.2.11",
+    "vite-plugin-pwa": "^0.20.0",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "@transcribe/transcriber": "^2.0.1"
+  }
+}
