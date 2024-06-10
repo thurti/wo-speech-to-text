@@ -1,7 +1,6 @@
 <script lang="ts">
   import UiSection from "@/components/ui/UISection.svelte";
   import PageContainer from "./PageContainer.svelte";
-  import { difference } from "lodash";
 </script>
 
 <PageContainer title="FAQ">
